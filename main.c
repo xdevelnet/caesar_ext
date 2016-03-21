@@ -34,8 +34,8 @@ char current_seek (char *key, unsigned int keysize) {//TODO: Need decrypt subrou
 }
 
 int main(int argc, char **argv) {
-	if (argc < 2) {
-		fprintf(stderr, "%s", "Please, provide key.\n"); //TODO: getopt_long()
+	if (argc < 2) { //TODO: getopt_long()
+		fprintf(stderr, "%s\n", "Please, provide key.");
 		exit(EXIT_FAILURE);
 	}
 	user_key = argv[1];
