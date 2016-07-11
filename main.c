@@ -24,7 +24,7 @@
 #define VERSION "0.1"
 #define IObuffersize 4096
 
-char *user_key; //IDK why c99 devels just decided to put restrict keyword AFTER asterisk. LOL.
+char *user_key;
 unsigned int seek = 0;
 
 char current_seek (char *key, unsigned int keysize) {//TODO: Need decrypt subroutine
@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
 	int character;
 
 	while ((character = getc(fsource)) != EOF) {
-		putc(character+current_seek(user_key, keylen), frecord); //TODO: should be through read() and write()
+		putc(character+current_seek(user_key, keylen), frecord);
 	}
 
 	return EXIT_SUCCESS;
